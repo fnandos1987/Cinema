@@ -1,0 +1,12 @@
+<p>
+  Editando Categoria
+</p>
+
+<form (ngSubmit)="onSubmit(form)" novalidate #form="ngForm">
+  <div class="form-group">
+    <label>Nome</label>
+    <input type="text" [(ngModel)]="item.nome" name="nome"  #nomeField="ngModel" required>
+    <p *ngIf="nomeField.touched && nomeField.invalid" class="alert alert-danger">Nome é obrigatório</p>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Salvar</button>
+</form>

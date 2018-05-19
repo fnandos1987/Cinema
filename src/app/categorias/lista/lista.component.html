@@ -1,0 +1,13 @@
+<button (click)="novo()" >Novo</button>
+<table class="zebrada">                
+  <tr>
+      <th>Descrição</th>                    
+      <th>Alterar</th>                    
+      <th>Excluir</th>                    
+    </tr>
+      <tr *ngFor="let item of items | async">
+          <td>{{ item.nome }} </td>
+          <td><button (click)="alterar(item.id)" >Alterar</button></td>
+          <td><button (click)="excluir(item.id)" >Excluir</button></td>
+      </tr>
+</table>
